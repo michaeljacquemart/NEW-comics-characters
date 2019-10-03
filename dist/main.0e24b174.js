@@ -2266,7 +2266,7 @@ var requestsAPI_1 = require("./requestsAPI"); // ON DOM READY
         case 1:
           characters = _a.sent();
           characters.forEach(function (character) {
-            var li = document.createRange().createContextualFragment("\n        <li>\n            <div class=\"imageCharacter\"><img src=\"data:image/gif;base64," + character.image + "\" /></div>\n            <h1>" + character.name + "</h1>\n            <p>" + character.shortDescription + "</p>\n            <a href=\"/view.html?id=" + character.id + "\" >View</a>\n            <a href=\"/edit.html?id=" + character.id + "\" >Edit</a>\n        </li>\n      ");
+            var li = document.createRange().createContextualFragment("\n        <li>\n            <div class=\"imageCharacter\"><img src=\"data:image/gif;base64," + character.image + "\" /></div>\n            <h2>" + character.name + "</h2>\n            <p>" + character.shortDescription + "</p>\n            <button><a href=\"/view.html?id=" + character.id + "\" >View</a></button>\n            <button><a href=\"/edit.html?id=" + character.id + "\" >Edit</a></button>\n        </li>\n      ");
             targetLists.appendChild(li);
           });
           return [2
@@ -2304,7 +2304,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44399" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43167" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};

@@ -1,7 +1,88 @@
 body {
-    background-color: #eee;
+    background-color: #f4f4f4;
+    width: 100%;
+
+    .logo {
+        width: 400px;
+        height: auto;
+        margin: auto;
+        display: flex;
+    }
 
     h1 {
-        color: #333;
+        color: #636363;
+        text-transform: uppercase;
+        margin-left: 60px;
+        font-family: 'Mansalva', cursive;
     }
+}
+
+.btn-create {
+    margin-left: 1000px;
+}
+
+ul {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+}
+
+li {
+    border: solid 3px #fa6262;
+    width: 18%;
+    height: auto;
+    padding: 20px;
+    margin: 20px;
+    list-style-type: none;
+
+
+
+    &:hover {
+        box-shadow: 12px 12px 2px 1px rgba(0, 0, 255, .2);
+    }
+}
+
+h2 {
+    color: #fa6262;
+    font-family: 'Mansalva', cursive;
+}
+
+p {
+    opacity: 0.8;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+button {
+    margin-right: 50px;
+    margin-left: 10px;
+    background-color: #fa6262;
+    color: white;
+    font-weight: bold;
+    border: none;
+    height: 30px;
+
+    &:hover {
+        background-color: white;
+        color: #fa6262;
+        box-shadow: 5px 5px 2px 1px rgba(0, 0, 255, 0.2);
+    }
+}
+
+a {
+    text-decoration: none;
+}
+
+form {
+    width: 40%;
+    margin: 50px;
+    display: flex;
+    flex-direction: column;
+}
+
+input[type="text"] {
+    border: 1px solid #fa6262;
+    padding: 5px;
+    margin: 10px;
+    width: 260px;
 }

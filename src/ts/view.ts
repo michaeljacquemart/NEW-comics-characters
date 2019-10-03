@@ -11,10 +11,10 @@ import { getOneCharacter } from "./requestsAPI";
 
   const viewTarget = document.createRange().createContextualFragment(`
     <div class="imageCharacter"><img src="data:image/gif;base64,${character.image}" /></div>
-    <h1>${character.name}</h1>
+    <h2>${character.name}</h2>
     <p>${character.description}</p>
-    <a href="/edit.html?id=${character.id}" >Edit</a>
-    <a href="/delete.html?id=${character.id}" >DELETE</a>
+    <button><a href="/edit.html?id=${character.id}" >Edit</a></button>
+    <button><a href="/delete.html?id=${character.id}" >DELETE</a></button>
   `);
 
   target.appendChild(viewTarget);

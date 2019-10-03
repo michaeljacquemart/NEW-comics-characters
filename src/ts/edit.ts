@@ -24,19 +24,22 @@ import { getOneCharacter, putCharacter } from "./requestsAPI";
   document.getElementById("formEdit").addEventListener("submit", async e => {
     e.preventDefault();
 
-    const inputImage = document.getElementById("inputImage").value;
-    const inputName = document.getElementById("inputName").value;
-    const inputShortDescription = document.getElementById(
-      "inputShortDescription"
-    ).value;
-    const inputDescription = document.getElementById("inputDescription").value;
+    const inputImage = (<HTMLInputElement>document.getElementById("inputImage"))
+      .value;
+    const inputName = (<HTMLInputElement>document.getElementById("inputName"))
+      .value;
+    const inputShortDescription = (<HTMLInputElement>(
+      document.getElementById("inputShortDescription")
+    )).value;
+    const inputDescription = (<HTMLInputElement>(
+      document.getElementById("inputDescription")
+    )).value;
 
     const data = {
-      id: id,
-      name: inputName,
-      image: inputImage,
+      description: inputDescription,
       shortDescription: inputShortDescription,
-      description: inputDescription
+      name: inputName,
+      image: inputImage
     };
 
     await putCharacter(data);

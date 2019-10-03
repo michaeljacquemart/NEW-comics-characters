@@ -2099,7 +2099,7 @@ var deleteCharacter = function deleteCharacter(id) {
 };
 
 exports.deleteCharacter = deleteCharacter;
-},{"axios":"../node_modules/axios/index.js"}],"ts/view.ts":[function(require,module,exports) {
+},{"axios":"../node_modules/axios/index.js"}],"ts/create.ts":[function(require,module,exports) {
 "use strict";
 
 var __awaiter = this && this.__awaiter || function (thisArg, _arguments, P, generator) {
@@ -2249,30 +2249,45 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var requestsAPI_1 = require("./requestsAPI"); // ON DOM READY
-
+var requestsAPI_1 = require("./requestsAPI");
 
 (function () {
   return __awaiter(void 0, void 0, void 0, function () {
-    var target, url, id, character, viewTarget;
     return __generator(this, function (_a) {
-      switch (_a.label) {
-        case 0:
-          target = document.getElementById("target");
-          url = new URL(window.location.href);
-          id = url.searchParams.get("id");
-          return [4
-          /*yield*/
-          , requestsAPI_1.getOneCharacter(id)];
+      document.getElementById("formCreate").addEventListener("submit", function (e) {
+        return __awaiter(void 0, void 0, void 0, function () {
+          var inputImage, inputName, inputShortDescription, inputDescription, data;
+          return __generator(this, function (_a) {
+            switch (_a.label) {
+              case 0:
+                e.preventDefault();
+                inputImage = document.getElementById("inputImage").value;
+                inputName = document.getElementById("inputName").value;
+                inputShortDescription = document.getElementById("inputShortDescription").value;
+                inputDescription = document.getElementById("inputDescription").value;
+                data = {
+                  name: inputName,
+                  image: inputImage,
+                  shortDescription: inputShortDescription,
+                  description: inputDescription
+                };
+                return [4
+                /*yield*/
+                , requestsAPI_1.postCharacter(data)];
 
-        case 1:
-          character = _a.sent();
-          viewTarget = document.createRange().createContextualFragment("\n    <div class=\"imageCharacter\"><img src=\"data:image/gif;base64," + character.image + "\" /></div>\n    <h2>" + character.name + "</h2>\n    <p>" + character.description + "</p>\n    <button><a href=\"/edit.html?id=" + character.id + "\" >Edit</a></button>\n    <button><a href=\"/delete.html?id=" + character.id + "\" >DELETE</a></button>\n  ");
-          target.appendChild(viewTarget);
-          return [2
-          /*return*/
-          ];
-      }
+              case 1:
+                _a.sent();
+
+                return [2
+                /*return*/
+                ];
+            }
+          });
+        });
+      });
+      return [2
+      /*return*/
+      ];
     });
   });
 })();
@@ -2479,5 +2494,5 @@ function hmrAcceptRun(bundle, id) {
     return true;
   }
 }
-},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","ts/view.ts"], null)
-//# sourceMappingURL=/view.1e8d920a.js.map
+},{}]},{},["../node_modules/parcel-bundler/src/builtins/hmr-runtime.js","ts/create.ts"], null)
+//# sourceMappingURL=/create.cf8cd3d2.js.map

@@ -2281,11 +2281,10 @@ var requestsAPI_1 = require("./requestsAPI"); // ON DOM READY
                     inputShortDescription = document.getElementById("inputShortDescription").value;
                     inputDescription = document.getElementById("inputDescription").value;
                     data = {
-                      id: id,
-                      name: inputName,
-                      image: inputImage,
+                      description: inputDescription,
                       shortDescription: inputShortDescription,
-                      description: inputDescription
+                      name: inputName,
+                      image: inputImage
                     };
                     return [4
                     /*yield*/
@@ -2336,7 +2335,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "44399" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43167" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
