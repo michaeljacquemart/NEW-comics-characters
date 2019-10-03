@@ -2253,23 +2253,24 @@ var requestsAPI_1 = require("./requestsAPI");
 
 (function () {
   return __awaiter(void 0, void 0, void 0, function () {
+    var inputImage, inputName, inputShortDescription, inputDescription;
     return __generator(this, function (_a) {
+      inputImage = document.getElementById("inputImage");
+      inputName = document.getElementById("inputName");
+      inputShortDescription = document.getElementById("inputShortDescription");
+      inputDescription = document.getElementById("inputDescription");
       document.getElementById("formCreate").addEventListener("submit", function (e) {
         return __awaiter(void 0, void 0, void 0, function () {
-          var inputImage, inputName, inputShortDescription, inputDescription, data;
+          var data;
           return __generator(this, function (_a) {
             switch (_a.label) {
               case 0:
                 e.preventDefault();
-                inputImage = document.getElementById("inputImage").value;
-                inputName = document.getElementById("inputName").value;
-                inputShortDescription = document.getElementById("inputShortDescription").value;
-                inputDescription = document.getElementById("inputDescription").value;
                 data = {
-                  name: inputName,
-                  image: inputImage,
-                  shortDescription: inputShortDescription,
-                  description: inputDescription
+                  name: inputName.value,
+                  image: inputImage.value,
+                  shortDescription: inputShortDescription.value,
+                  description: inputDescription.value
                 };
                 return [4
                 /*yield*/

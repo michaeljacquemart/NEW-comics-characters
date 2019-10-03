@@ -2254,7 +2254,7 @@ var requestsAPI_1 = require("./requestsAPI"); // ON DOM READY
 
 (function () {
   return __awaiter(void 0, void 0, void 0, function () {
-    var target, url, id, character, editTarget;
+    var target, url, id, character, editTarget, inputImage, inputName, inputShortDescription, inputDescription;
     return __generator(this, function (_a) {
       switch (_a.label) {
         case 0:
@@ -2267,24 +2267,25 @@ var requestsAPI_1 = require("./requestsAPI"); // ON DOM READY
 
         case 1:
           character = _a.sent();
-          editTarget = document.createRange().createContextualFragment("\n    <form id=\"formEdit\">\n        <input type=\"text\" id=\"inputImage\" value=\"" + character.image + "\" />\n        <input type=\"text\" id=\"inputName\" value=\"" + character.name + "\" />\n        <input type=\"text\" id=\"inputShortDescription\" value=\"" + character.shortDescription + "\" />\n        <input type=\"text\" id=\"inputDescription\" value=\"" + character.description + "\" />\n        <button type=\"submit\">Modifier</button>\n    </form>\n  ");
+          editTarget = document.createRange().createContextualFragment("\n    <form id=\"formEdit\" data-id=\"" + character.id + "\">\n        <input type=\"text\" id=\"inputImage\" value=\"" + character.image + "\" />\n        <input type=\"text\" id=\"inputName\" value=\"" + character.name + "\" />\n        <input type=\"text\" id=\"inputShortDescription\" value=\"" + character.shortDescription + "\" />\n        <input type=\"text\" id=\"inputDescription\" value=\"" + character.description + "\" />\n        <button type=\"submit\">Modifier</button>\n        <button id=\"delete\">Supprimer</button>\n    </form>\n  ");
           target.appendChild(editTarget);
+          inputImage = document.getElementById("inputImage");
+          inputName = document.getElementById("inputName");
+          inputShortDescription = document.getElementById("inputShortDescription");
+          inputDescription = document.getElementById("inputDescription");
           document.getElementById("formEdit").addEventListener("submit", function (e) {
             return __awaiter(void 0, void 0, void 0, function () {
-              var inputImage, inputName, inputShortDescription, inputDescription, data;
+              var data;
               return __generator(this, function (_a) {
                 switch (_a.label) {
                   case 0:
                     e.preventDefault();
-                    inputImage = document.getElementById("inputImage").value;
-                    inputName = document.getElementById("inputName").value;
-                    inputShortDescription = document.getElementById("inputShortDescription").value;
-                    inputDescription = document.getElementById("inputDescription").value;
                     data = {
-                      description: inputDescription,
-                      shortDescription: inputShortDescription,
-                      name: inputName,
-                      image: inputImage
+                      id: id,
+                      description: inputDescription.value,
+                      shortDescription: inputShortDescription.value,
+                      name: inputName.value,
+                      image: inputImage.value
                     };
                     return [4
                     /*yield*/

@@ -1,25 +1,22 @@
 import { postCharacter } from "./requestsAPI";
 
 (async () => {
+  const inputImage = <HTMLInputElement>document.getElementById("inputImage");
+  const inputName = <HTMLInputElement>document.getElementById("inputName");
+  const inputShortDescription = <HTMLInputElement>(
+    document.getElementById("inputShortDescription")
+  );
+  const inputDescription = <HTMLInputElement>(
+    document.getElementById("inputDescription")
+  );
+
   document.getElementById("formCreate").addEventListener("submit", async e => {
     e.preventDefault();
-
-    const inputImage = (<HTMLInputElement>document.getElementById("inputImage"))
-      .value;
-    const inputName = (<HTMLInputElement>document.getElementById("inputName"))
-      .value;
-    const inputShortDescription = (<HTMLInputElement>(
-      document.getElementById("inputShortDescription")
-    )).value;
-    const inputDescription = (<HTMLInputElement>(
-      document.getElementById("inputDescription")
-    )).value;
-
     const data = {
-      name: inputName,
-      image: inputImage,
-      shortDescription: inputShortDescription,
-      description: inputDescription
+      name: inputName.value,
+      image: inputImage.value,
+      shortDescription: inputShortDescription.value,
+      description: inputDescription.value
     };
 
     await postCharacter(data);
