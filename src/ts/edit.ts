@@ -45,7 +45,8 @@ import { getOneCharacter, putCharacter, deleteCharacter } from "./requestsAPI";
     await putCharacter(data);
   });
 
-  // document.getElementById("delete").addEventListener("click", event => {
-  //   await deleteCharacter();
-  // });
+  document.getElementById("delete").addEventListener("click", async event => {
+    await deleteCharacter(event.target.parentNode.dataset.id);
+    // window.location = "http://localhost:1234/index.html";
+  });
 })();

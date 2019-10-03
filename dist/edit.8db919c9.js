@@ -2301,6 +2301,25 @@ var requestsAPI_1 = require("./requestsAPI"); // ON DOM READY
               });
             });
           });
+          document.getElementById("delete").addEventListener("click", function (event) {
+            return __awaiter(void 0, void 0, void 0, function () {
+              return __generator(this, function (_a) {
+                switch (_a.label) {
+                  case 0:
+                    return [4
+                    /*yield*/
+                    , requestsAPI_1.deleteCharacter(event.target.parentNode.dataset.id)];
+
+                  case 1:
+                    _a.sent();
+
+                    return [2
+                    /*return*/
+                    ];
+                }
+              });
+            });
+          });
           return [2
           /*return*/
           ];
@@ -2336,7 +2355,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "43167" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "33373" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
